@@ -1,0 +1,145 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Simple API",
+    "version": ""
+  },
+  "host": "localhost:8081",
+  "schemes": [
+    "http"
+  ],
+  "definitions": {
+    "Person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  },
+  "paths": {
+    "/resources": {
+      "get": {
+        "operationId": "GET_resources",
+        "produces": [
+          "application/json",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/types-test": {
+      "post": {
+        "operationId": "POST_types-test",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/definitions/Person"
+            },
+            "in": "body",
+            "name": "body",
+            "required": true
+          }
+        ]
+      },
+      "put": {
+        "operationId": "PUT_types-test",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/definitions/Person"
+            },
+            "in": "body",
+            "name": "body",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/reusing-payload": {
+      "post": {
+        "operationId": "POST_reusing-payload",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/definitions/Person"
+            },
+            "in": "body",
+            "name": "body",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/response-json-only": {
+      "get": {
+        "operationId": "GET_response-json-only",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/error": {
+      "post": {
+        "operationId": "POST_error",
+        "produces": [
+          "application/json",
+          "text/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "first",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}
