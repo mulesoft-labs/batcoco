@@ -1,8 +1,0 @@
-*.class
-*.log
-
-.gradle/
-.idea/
-batcoco.iml
-
-build/
