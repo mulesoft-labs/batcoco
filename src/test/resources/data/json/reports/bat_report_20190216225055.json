@@ -1,0 +1,149 @@
+{
+  "startDate": "2019-02-16T22:51:01",
+  "result": [
+    {
+      "startDate": "2019-02-16T22:51:01",
+      "result": [
+        {
+          "kind": "HTTP",
+          "name": "GET https://devx.anypoint.mulesoft.com/monitoring/api/status",
+          "softFail": false,
+          "result": {
+            "options": {
+              "headers": {},
+              "method": "GET",
+              "url": "https://devx.anypoint.mulesoft.com/monitoring/api/status"
+            },
+            "request": {
+              "httpVersion": "HTTP/1.1",
+              "method": "GET",
+              "url": "https://devx.anypoint.mulesoft.com/monitoring/api/status",
+              "path": "/monitoring/api/status",
+              "ip": "35.169.244.53",
+              "port": 443,
+              "headers": {
+                "Connection": "close",
+                "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+                "Accept-Encoding": "gzip,deflate",
+                "User-Agent": "DataWeave/2.0",
+                "Host": "devx.anypoint.mulesoft.com:443"
+              }
+            },
+            "timers": {
+              "dns": 217.2310791015625,
+              "wait": 260.1952209472656,
+              "connect": 983.0005493164062,
+              "ssl": 0.23565199971199036,
+              "receive": 34.53217315673828,
+              "total": 1496.128173828125,
+              "send": 0.015866000205278397
+            },
+            "err": false,
+            "response": {
+              "status": 200,
+              "statusText": "OK",
+              "payload": "{\"serviceName\":\"Monitoring UI API\",\"version\":\"0.3.14-core-paas\",\"externalServices\":[{\"name\":\"Core Services\",\"url\":\"http://auth-server-int.devx.msap.io:3004/api/status\"},{\"name\":\"Metrics API\",\"url\":\"http://metrics-api.monitoring-center.svc/status\"},{\"name\":\"Logging API\",\"url\":\"http://logging-api.dias.svc/api/v1/status\"},{\"name\":\"Provisioning\",\"url\":\"http://provisioning-api.dias.svc/status\"},{\"name\":\"Logging\",\"url\":\"https://moncenterlogging.devx.msap.io/api/status\"},{\"name\":\"Visualizer\",\"url\":\"https://monitoring-center-visualizer.devx.msap.io/monitoring/api/visualizer/status\"}],\"others\":[{\"name\":\"Cached profiles\",\"value\":\"3\"},{\"name\":\"Cached authorizations\",\"value\":\"2\"},{\"name\":\"Cached provisioning configs\",\"value\":\"2\"},{\"name\":\"Cached provisioning resources\",\"value\":\"2\"}]}",
+              "body": {
+                "serviceName": "Monitoring UI API",
+                "version": "0.3.14-core-paas",
+                "externalServices": [
+                  {
+                    "name": "Core Services",
+                    "url": "http://auth-server-int.devx.msap.io:3004/api/status"
+                  },
+                  {
+                    "name": "Metrics API",
+                    "url": "http://metrics-api.monitoring-center.svc/status"
+                  },
+                  {
+                    "name": "Logging API",
+                    "url": "http://logging-api.dias.svc/api/v1/status"
+                  },
+                  {
+                    "name": "Provisioning",
+                    "url": "http://provisioning-api.dias.svc/status"
+                  },
+                  {
+                    "name": "Logging",
+                    "url": "https://moncenterlogging.devx.msap.io/api/status"
+                  },
+                  {
+                    "name": "Visualizer",
+                    "url": "https://monitoring-center-visualizer.devx.msap.io/monitoring/api/visualizer/status"
+                  }
+                ],
+                "others": [
+                  {
+                    "name": "Cached profiles",
+                    "value": "3"
+                  },
+                  {
+                    "name": "Cached authorizations",
+                    "value": "2"
+                  },
+                  {
+                    "name": "Cached provisioning configs",
+                    "value": "2"
+                  },
+                  {
+                    "name": "Cached provisioning resources",
+                    "value": "2"
+                  }
+                ]
+              },
+              "mime": "application/json",
+              "contentType": "application/json",
+              "headers": {
+                "Connection": "Close",
+                "Content-Length": "782",
+                "Content-Type": "application/json",
+                "Date": "Sun, 17 Feb 2019 01:51:04 GMT",
+                "Server": "nginx",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "X-Frame-Options": "SAMEORIGIN",
+                "X-Request-Id": "69636ca5-5330-4f23-bf62-349a53cb217b"
+              }
+            }
+          },
+          "time": 1496.128173828125,
+          "prefix": "GET",
+          "startDate": "2019-02-16T22:51:02.819-03:00",
+          "assertions": [
+            {
+              "kind": "Assertion",
+              "pass": true,
+              "name": "200 must equal 200",
+              "softFail": false,
+              "result": {
+                "kind": "Assertion::Equal",
+                "expectedValue": "200",
+                "givenValue": "200"
+              }
+            }
+          ],
+          "pass": true
+        }
+      ],
+      "parameters": {},
+      "metadata": {},
+      "prefix": "MUST",
+      "kind": "TEST",
+      "skip": false,
+      "name": "check the health status",
+      "pass": true,
+      "time": 0,
+      "fileName": "",
+      "softFail": false
+    }
+  ],
+  "parameters": {},
+  "metadata": {},
+  "prefix": "SUITE",
+  "kind": "TEST",
+  "skip": false,
+  "name": "Status Test",
+  "pass": true,
+  "time": 0,
+  "fileName": "tests/general/status.dwl",
+  "softFail": false
+}
