@@ -1,5 +1,6 @@
 package org.batcoco
 
+import java.net.URI
 import java.util.regex.PatternSyntaxException
 
 import amf.client.AMF
@@ -51,6 +52,8 @@ class ApiReaderTest extends FunSuite with Matchers with BeforeAndAfterAll {
     val endPoints = webApi.endPoints
     endPoints.size() should be(5)
     dump("example.json", webApi)
+
+
   }
 
   test("BatCoco get Case class with a Map test") {
@@ -123,28 +126,6 @@ class ApiReaderTest extends FunSuite with Matchers with BeforeAndAfterAll {
     assert(result3)
   }
 
-//  test("test if exists REGEX URL") {
-//
-//    val url = getClass.getResource("/raml/example_withParameters.raml")
-//
-//    val parser = AMF.ramlParser()
-//    val baseUnit = parser.parseFileAsync(url.toString).get()
-//    val document = AMF.resolveRaml10(baseUnit).asInstanceOf[Document]
-//    val webApi = document.encodes.asInstanceOf[WebApi]
-//
-//    val endPoints = webApi.endPoints
-//    endPoints.size() should be(4)
-//
-//    val endpointItems = dump(url.getPath, webApi)
-//    println(endpointItems)
-//    val path = "/resources"
-//    val method = "GET"
-//    val endpointItem = find(path, method, endpointItems)
-//    assert(endpointItem.get.url == path)
-//    assert(endpointItem.get.method == method)
-//
-//  }
-
   def find(path: String,
            method: String,
            endpointItems: List[EndpointItem]): Option[EndpointItem] = {
@@ -156,13 +137,13 @@ class ApiReaderTest extends FunSuite with Matchers with BeforeAndAfterAll {
 
     println("------ " + text + " ------")
     val results = webApi.endPoints.asScala.map(endPoint => {
-//        println(endPoint.path.value())
+      //        println(endPoint.path.value())
       val result = endPoint.operations.asScala.map(operation => {
-//          println("\t" + operation.method.value())
+        //          println("\t" + operation.method.value())
         EndpointItem(url = endPoint.path.value(),
-                     method = operation.method.value().toUpperCase)
+          method = operation.method.value().toUpperCase)
       })
-//        println("--------------------------------")
+      //        println("--------------------------------")
       result.toList
     })
     results.toList.flatten
@@ -212,4 +193,98 @@ class ApiReaderTest extends FunSuite with Matchers with BeforeAndAfterAll {
         None
     }
   }
+
+  test("Coverage") {
+
+    val url = getClass.getResource("/example.raml")
+
+    val parser = AMF.ramlParser()
+    val baseUnit = parser.parseFileAsync(url.toString).get()
+    val document = AMF.resolveRaml10(baseUnit).asInstanceOf[Document]
+    val webApi = document.encodes.asInstanceOf[WebApi]
+
+    val result = List() // TODO
+
+    val endPoints = webApi.endPoints
+
+    val batcoco = new Batcoco(result)
+    endPoints.asScala.map(endPoint => {
+
+      val basePath = webApi.servers.asScala.headOption.map(server => server.url.value())
+      val path = if (basePath.isDefined) basePath.get + endPoint.path.value() else endPoint.path.value()
+
+      val resultCoverage = endPoint.operations.asScala.map(op => {
+        val method = op.method.value()
+        val tested = batcoco.tested(path, method)
+        if (!tested) {
+          println(s"NO tested $path $method")
+        }
+        (path, method, tested)
+      })
+      resultCoverage
+    })
+
+  }
+
+  class Batcoco(result: List[(URI, String)]) {
+
+    // Path is RAML BaseUri + Endpoint Path
+    def tested(path: String, method: String): Boolean = {
+
+      result.foreach(test => {
+        val runtimePath = test._1.toString
+        // TODO method pending
+        if (matchesResource(path, runtimePath)) return true
+      })
+      false
+    }
+
+    private def matchesResource(resourcePath: String, path: String): Boolean = {
+      buildPathRegex(resourcePath, exactMatch = true) match {
+        case Some(r) =>
+          r.findFirstIn(path).isDefined
+        case None =>
+          // TODO return an error
+          false
+      }
+    }
+
+    private def buildPathRegex(path: String,
+                               exactMatch: Boolean = false): Option[Regex] = {
+      try {
+        // If path is /, we don't need to make a regex
+        val regex: String =
+          if (path.equals(Separator))
+            s"\\$Separator"
+          else {
+            path
+              .split(Separator)
+              .toList
+              .map { s =>
+                //              if(s.startsWith("{") && s.endsWith("}")) "[\\w\\S]+" else s
+                // TODO check which regex should be used
+                if (path.endsWith(Separator)) {
+                  s.replaceAll("\\{[^\\/\\{\\}]+\\}", "([^\\/]+)?\\/{1}")
+                } else {
+                  s.replaceAll("\\{[^\\/\\{\\}]+\\}", "([^\\/]+)?")
+                }
+              }
+              .mkString(s"\\$Separator")
+
+          }
+        if (exactMatch) Some(s"^$regex$$".r) else Some(s"^$regex".r)
+      } catch {
+        case e: PatternSyntaxException =>
+          // TODO how to log the error ?
+          //        logError(s"An error occured while trying to create regular expression for Path $path")
+          None
+      }
+    }
+  }
 }
+
+
+
+
+
+
