@@ -299,7 +299,7 @@
               "result": {
                 "options": {
                   "headers": {
-                    
+
                   },
                   "method": "GET",
                   "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36/false"
@@ -334,7 +334,7 @@
                   "statusText": "OK",
                   "payload": "{}",
                   "body": {
-                    
+
                   },
                   "mime": "application/json",
                   "contentType": "application/json",
@@ -370,10 +370,10 @@
             }
           ],
           "parameters": {
-            
+
           },
           "metadata": {
-            
+
           },
           "prefix": "SHOULD",
           "kind": "TEST",

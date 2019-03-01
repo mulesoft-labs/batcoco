@@ -12,7 +12,7 @@ class ParserReportJsonSpec extends FunSuite with Matchers {
       "data/json/reports/bat_report.json"
     val result = BATGetRequests.getAllRequests(path)
     println(result)
-    result.requests.size should be(2)
+    result.requests.size should be(4)
   }
 
   test("Parse report Json case 2") {

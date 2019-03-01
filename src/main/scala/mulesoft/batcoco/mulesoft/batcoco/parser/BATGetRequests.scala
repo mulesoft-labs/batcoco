@@ -20,7 +20,7 @@ object BATGetRequests {
       val parsedJson = parse(path.getSource)
       val result = for {
         JObject(child) <- parsedJson
-        JField("path", JString(url)) <- child
+        JField("url", JString(url)) <- child
         JField("method", JString(method)) <- child
       } yield (url, method)
       BATTestResult(result)
