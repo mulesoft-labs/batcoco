@@ -1,13 +1,13 @@
-package mulesoft.batcoco.mulesoft.batcoco.service
+package com.mulesoft.batcoco.mulesoft.batcoco.service
 
 import amf.client.AMF
 import amf.client.model.document.Document
 import amf.client.model.domain.WebApi
-import mulesoft.batcoco.mulesoft.batcoco.parser.{BATGetRequests, Batcoco}
+import com.mulesoft.batcoco.mulesoft.batcoco.parser.{BATGetRequests, Batcoco}
 
 import scala.collection.JavaConverters._
 
-object BatcocoService {
+class BatcocoServiceImpl extends BatcocoService {
 
   def process(pathRAML: String,
               pathResult: String): List[(String, String, Boolean)] = {

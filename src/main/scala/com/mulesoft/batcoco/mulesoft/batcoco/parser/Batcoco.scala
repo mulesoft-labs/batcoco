@@ -1,4 +1,4 @@
-package mulesoft.batcoco.mulesoft.batcoco.parser
+package com.mulesoft.batcoco.mulesoft.batcoco.parser
 
 import java.util.regex.PatternSyntaxException
 

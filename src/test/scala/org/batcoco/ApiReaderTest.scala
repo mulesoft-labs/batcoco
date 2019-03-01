@@ -1,19 +1,14 @@
 package org.batcoco
 
-import java.net.URI
 import java.util.regex.PatternSyntaxException
 
 import amf.client.AMF
 import amf.client.model.document.Document
 import amf.client.model.domain.WebApi
 import amf.plugins.features.validation.AMFValidatorPlugin
-import mulesoft.batcoco.EndpointItem
-import mulesoft.batcoco.mulesoft.batcoco.parser.{
-  BATGetRequests,
-  BATTestResult,
-  Batcoco
-}
-import mulesoft.batcoco.mulesoft.batcoco.service.BatcocoService
+import com.mulesoft.batcoco.EndpointItem
+import com.mulesoft.batcoco.mulesoft.batcoco.parser.{BATGetRequests, Batcoco}
+import com.mulesoft.batcoco.mulesoft.batcoco.service.BatcocoServiceImpl
 import org.scalatest.{BeforeAndAfterAll, FunSuite, Matchers}
 
 import scala.collection.JavaConverters._
@@ -240,7 +235,7 @@ class ApiReaderTest extends FunSuite with Matchers with BeforeAndAfterAll {
 
     lazy val pathRAML = "/raml/batcoco_v2.raml"
     lazy val pathReport = "data/json/reports/bat_report.json"
-    val result = BatcocoService.process(pathRAML, pathReport)
+    val result = new BatcocoServiceImpl().process(pathRAML, pathReport)
 
     println(
       f"Coverage ${result.count(r => r._3 === true).toDouble / result.size}%1.2f")

@@ -1,4 +1,4 @@
-package mulesoft.batcoco.mulesoft.batcoco.parser
+package com.mulesoft.batcoco.mulesoft.batcoco.parser
 
 import org.json4s._
 import org.json4s.native.JsonMethods._
