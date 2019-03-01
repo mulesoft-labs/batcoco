@@ -9,7 +9,7 @@ class ParserReportJsonSpec extends FunSuite with Matchers {
 
   test("Parse report Json") {
     lazy val path =
-      "data/json/reports/bat_report_20190216225055.json"
+      "data/json/reports/bat_report.json"
     val result = BATGetRequests.getAllRequests(path)
     println(result)
     result.requests.size should be(2)

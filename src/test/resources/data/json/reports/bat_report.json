@@ -1,0 +1,418 @@
+{
+  "startDate": "2019-02-28T17:46:25",
+  "result": [
+    {
+      "startDate": "2019-02-28T17:46:23",
+      "result": [
+        {
+          "startDate": "2019-02-28T17:46:23",
+          "result": [
+            {
+              "kind": "HTTP",
+              "name": "GET https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part",
+              "softFail": false,
+              "result": {
+                "options": {
+                  "headers": {
+                    
+                  },
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part"
+                },
+                "request": {
+                  "httpVersion": "HTTP/1.1",
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part",
+                  "path": "/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part",
+                  "ip": "52.72.255.133",
+                  "port": 443,
+                  "headers": {
+                    "Connection": "close",
+                    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+                    "Accept-Encoding": "gzip,deflate",
+                    "User-Agent": "DataWeave/2.0",
+                    "Host": "anypoint.mulesoft.com:443"
+                  }
+                },
+                "timers": {
+                  "dns": 37.284820556640625,
+                  "wait": 375.0079040527344,
+                  "connect": 456.8277893066406,
+                  "ssl": 0.27114298939704895,
+                  "receive": 30.520456314086914,
+                  "total": 900.5062866210938,
+                  "send": 0.015135999768972397
+                },
+                "err": false,
+                "response": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "payload": "{}",
+                  "body": {
+                    
+                  },
+                  "mime": "application/json",
+                  "contentType": "application/json",
+                  "headers": {
+                    "Connection": "Close",
+                    "Content-Length": "2",
+                    "Content-Type": "application/json",
+                    "Date": "Thu, 28 Feb 2019 20:46:24 GMT",
+                    "Server": "nginx",
+                    "X-Ratelimit-Limit": "480",
+                    "X-Ratelimit-Remaining": "479",
+                    "X-Ratelimit-Reset": "36121"
+                  }
+                }
+              },
+              "time": 900.5062866210938,
+              "prefix": "GET",
+              "startDate": "2019-02-28T17:46:24.272-03:00",
+              "assertions": [
+                {
+                  "kind": "Assertion",
+                  "pass": true,
+                  "name": "200 must equal 200",
+                  "softFail": false,
+                  "result": {
+                    "kind": "Assertion::Equal",
+                    "expectedValue": "200",
+                    "givenValue": "200"
+                  }
+                }
+              ],
+              "pass": true
+            }
+          ],
+          "parameters": {
+            
+          },
+          "metadata": {
+            
+          },
+          "prefix": "MUST",
+          "kind": "TEST",
+          "skip": false,
+          "name": "GET with baseUriParameters `v1 = 1.0.0` and `v2 = 2.1.0`",
+          "pass": true,
+          "time": 0,
+          "fileName": "",
+          "softFail": false
+        },
+        {
+          "startDate": "2019-02-28T17:46:24",
+          "result": [
+            {
+              "kind": "HTTP",
+              "name": "GET https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491",
+              "softFail": false,
+              "result": {
+                "options": {
+                  "headers": {
+                    
+                  },
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491"
+                },
+                "request": {
+                  "httpVersion": "HTTP/1.1",
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491",
+                  "path": "/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491",
+                  "ip": "52.72.255.133",
+                  "port": 443,
+                  "headers": {
+                    "Connection": "close",
+                    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+                    "Accept-Encoding": "gzip,deflate",
+                    "User-Agent": "DataWeave/2.0",
+                    "Host": "anypoint.mulesoft.com:443"
+                  }
+                },
+                "timers": {
+                  "dns": 0.16910800337791443,
+                  "wait": 92.86270141601562,
+                  "connect": 158.7736358642578,
+                  "ssl": 0.1139179989695549,
+                  "receive": 1.657858967781067,
+                  "total": 253.61033630371094,
+                  "send": 0.01257999986410141
+                },
+                "err": false,
+                "response": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "payload": "{}",
+                  "body": {
+                    
+                  },
+                  "mime": "application/json",
+                  "contentType": "application/json",
+                  "headers": {
+                    "Connection": "Close",
+                    "Content-Length": "2",
+                    "Content-Type": "application/json",
+                    "Date": "Thu, 28 Feb 2019 20:46:24 GMT",
+                    "Server": "nginx",
+                    "X-Ratelimit-Limit": "480",
+                    "X-Ratelimit-Remaining": "478",
+                    "X-Ratelimit-Reset": "35495"
+                  }
+                }
+              },
+              "time": 253.61033630371094,
+              "prefix": "GET",
+              "startDate": "2019-02-28T17:46:24.563-03:00",
+              "assertions": [
+                {
+                  "kind": "Assertion",
+                  "pass": true,
+                  "name": "200 must equal 200",
+                  "softFail": false,
+                  "result": {
+                    "kind": "Assertion::Equal",
+                    "expectedValue": "200",
+                    "givenValue": "200"
+                  }
+                }
+              ],
+              "pass": true
+            }
+          ],
+          "parameters": {
+            
+          },
+          "metadata": {
+            
+          },
+          "prefix": "SHOULD",
+          "kind": "TEST",
+          "skip": false,
+          "name": "GET with baseUriParameters `v1 = 1.0.0` and `v2 = 2.1.0` and uriParameters `uriParam1 = 29491`",
+          "pass": true,
+          "time": 0,
+          "fileName": "",
+          "softFail": true
+        },
+        {
+          "startDate": "2019-02-28T17:46:24",
+          "result": [
+            {
+              "kind": "HTTP",
+              "name": "GET https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36",
+              "softFail": false,
+              "result": {
+                "options": {
+                  "headers": {
+                    
+                  },
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36"
+                },
+                "request": {
+                  "httpVersion": "HTTP/1.1",
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36",
+                  "path": "/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36",
+                  "ip": "52.72.255.133",
+                  "port": 443,
+                  "headers": {
+                    "Connection": "close",
+                    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+                    "Accept-Encoding": "gzip,deflate",
+                    "User-Agent": "DataWeave/2.0",
+                    "Host": "anypoint.mulesoft.com:443"
+                  }
+                },
+                "timers": {
+                  "dns": 0.16307300329208374,
+                  "wait": 97.4694595336914,
+                  "connect": 136.06080627441406,
+                  "ssl": 0.08364900201559067,
+                  "receive": 1.6933300495147705,
+                  "total": 235.5022735595703,
+                  "send": 0.01169000007212162
+                },
+                "err": false,
+                "response": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "payload": "{}",
+                  "body": {
+                    
+                  },
+                  "mime": "application/json",
+                  "contentType": "application/json",
+                  "headers": {
+                    "Connection": "Close",
+                    "Content-Length": "2",
+                    "Content-Type": "application/json",
+                    "Date": "Thu, 28 Feb 2019 20:46:24 GMT",
+                    "Server": "nginx",
+                    "X-Ratelimit-Limit": "480",
+                    "X-Ratelimit-Remaining": "479",
+                    "X-Ratelimit-Reset": "35240"
+                  }
+                }
+              },
+              "time": 235.5022735595703,
+              "prefix": "GET",
+              "startDate": "2019-02-28T17:46:24.825-03:00",
+              "assertions": [
+                {
+                  "kind": "Assertion",
+                  "pass": true,
+                  "name": "200 must equal 200",
+                  "softFail": false,
+                  "result": {
+                    "kind": "Assertion::Equal",
+                    "expectedValue": "200",
+                    "givenValue": "200"
+                  }
+                }
+              ],
+              "pass": true
+            }
+          ],
+          "parameters": {
+            
+          },
+          "metadata": {
+            
+          },
+          "prefix": "SHOULD",
+          "kind": "TEST",
+          "skip": false,
+          "name": "GET with baseUriParameters `v1 = 1.0.0` and `v2 = 2.1.0` and uriParameters `uriParam1 = 29491` and `uriParam2 = 36`",
+          "pass": true,
+          "time": 0,
+          "fileName": "",
+          "softFail": true
+        },
+        {
+          "startDate": "2019-02-28T17:46:24",
+          "result": [
+            {
+              "kind": "HTTP",
+              "name": "GET https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36/false",
+              "softFail": false,
+              "result": {
+                "options": {
+                  "headers": {
+                    
+                  },
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36/false"
+                },
+                "request": {
+                  "httpVersion": "HTTP/1.1",
+                  "method": "GET",
+                  "url": "https://anypoint.mulesoft.com/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36/false",
+                  "path": "/mocking/api/v1/links/474ce06c-ea15-4aef-a205-49a1c54fb8fa/api/1.0.0/2.1.0/part/29491/36/false",
+                  "ip": "52.72.255.133",
+                  "port": 443,
+                  "headers": {
+                    "Connection": "close",
+                    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+                    "Accept-Encoding": "gzip,deflate",
+                    "User-Agent": "DataWeave/2.0",
+                    "Host": "anypoint.mulesoft.com:443"
+                  }
+                },
+                "timers": {
+                  "dns": 0.10723800212144852,
+                  "wait": 81.77606201171875,
+                  "connect": 150.6292266845703,
+                  "ssl": 0.12539400160312653,
+                  "receive": 1.710785984992981,
+                  "total": 234.3810272216797,
+                  "send": 0.011668999679386616
+                },
+                "err": false,
+                "response": {
+                  "status": 200,
+                  "statusText": "OK",
+                  "payload": "{}",
+                  "body": {
+                    
+                  },
+                  "mime": "application/json",
+                  "contentType": "application/json",
+                  "headers": {
+                    "Connection": "Close",
+                    "Content-Length": "2",
+                    "Content-Type": "application/json",
+                    "Date": "Thu, 28 Feb 2019 20:46:25 GMT",
+                    "Server": "nginx",
+                    "X-Ratelimit-Limit": "480",
+                    "X-Ratelimit-Remaining": "478",
+                    "X-Ratelimit-Reset": "34968"
+                  }
+                }
+              },
+              "time": 234.3810272216797,
+              "prefix": "GET",
+              "startDate": "2019-02-28T17:46:25.081-03:00",
+              "assertions": [
+                {
+                  "kind": "Assertion",
+                  "pass": true,
+                  "name": "200 must equal 200",
+                  "softFail": false,
+                  "result": {
+                    "kind": "Assertion::Equal",
+                    "expectedValue": "200",
+                    "givenValue": "200"
+                  }
+                }
+              ],
+              "pass": true
+            }
+          ],
+          "parameters": {
+            
+          },
+          "metadata": {
+            
+          },
+          "prefix": "SHOULD",
+          "kind": "TEST",
+          "skip": false,
+          "name": "GET with baseUriParameters `v1 = 1.0.0` and `v2 = 2.1.0` and uriParameters `uriParam1 = 29491`, `uriParam2 = 36` and `uriParam3 = false`",
+          "pass": true,
+          "time": 0,
+          "fileName": "",
+          "softFail": true
+        }
+      ],
+      "parameters": {
+        
+      },
+      "metadata": {
+        
+      },
+      "prefix": "DESCRIBE",
+      "kind": "TEST",
+      "skip": false,
+      "name": "BATCOCO v2 suite",
+      "pass": true,
+      "time": 0,
+      "fileName": "",
+      "softFail": false
+    }
+  ],
+  "parameters": {
+    
+  },
+  "metadata": {
+    
+  },
+  "prefix": "",
+  "kind": "TEST",
+  "skip": false,
+  "name": "BATCOCO",
+  "pass": true,
+  "time": 0,
+  "fileName": "",
+  "softFail": false
+}

@@ -1,6 +1,5 @@
 package mulesoft.batcoco.mulesoft.batcoco.parser
 
-
 import org.json4s._
 import org.json4s.native.JsonMethods._
 
@@ -21,7 +20,7 @@ object BATGetRequests {
       val parsedJson = parse(path.getSource)
       val result = for {
         JObject(child) <- parsedJson
-        JField("url", JString(url)) <- child
+        JField("path", JString(url)) <- child
         JField("method", JString(method)) <- child
       } yield (url, method)
       BATTestResult(result)

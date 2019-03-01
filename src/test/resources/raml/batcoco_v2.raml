@@ -1,0 +1,34 @@
+#%RAML 1.0
+title: HARMONY
+version: v2
+baseUri: https://www.example.com/api/{v1}/{v2}
+baseUriParameters:
+  v1:
+    type: string
+  v2:
+    type: string
+
+/part:
+  get:
+  description: GET without parameters
+  
+  /{uriParam1}:
+    uriParameters:
+      uriParam1:
+        type: integer
+    get:
+    description: GET with one parameter
+    
+    /{uriParam2}:
+      uriParameters:
+        uriParam2:
+          type: number
+      get:
+      description: GET with two parameters
+      
+      /{uriParam3}:
+        uriParameters:
+          uriParam3:
+            type: boolean
+        get:
+        description: GET with three parameters
