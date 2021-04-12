@@ -1,6 +1,6 @@
 package org.batcoco
 
-import mulesoft.batcoco.mulesoft.batcoco.parser.BATGetRequests
+import com.mulesoft.batcoco.mulesoft.batcoco.parser.BATGetRequests
 import org.scalatest.{FunSuite, Matchers}
 
 class ParserReportJsonSpec extends FunSuite with Matchers {
